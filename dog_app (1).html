@@ -13116,7 +13116,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13157,7 +13157,7 @@ There are 8351 total dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -13174,7 +13174,7 @@ There are 8351 total dog images.
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13201,7 +13201,7 @@ There are 8351 total dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>                
@@ -13285,7 +13285,7 @@ There are 8351 total dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># returns &quot;True&quot; if face is detected in image stored at img_path</span>
@@ -13303,7 +13303,7 @@ There are 8351 total dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">face_detector</span><span class="p">(</span><span class="n">human_files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -13319,7 +13319,7 @@ There are 8351 total dog images.
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13860,13 +13860,13 @@ There are 8351 total dog images.
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">transformT</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">transform_train</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">RandomHorizontalFlip</span><span class="p">(),</span> <span class="c1"># randomly flip and rotate</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">RandomRotation</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">))])</span>
 
-<span class="n">transformV</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">))])</span>
 
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">20</span>
@@ -13898,9 +13898,9 @@ There are 8351 total dog images.
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_train_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transformT</span> <span class="p">)</span>
-<span class="n">valid_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_valid_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transformV</span> <span class="p">)</span>
-<span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_test_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transformV</span> <span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_train_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="p">)</span>
+<span class="n">valid_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_valid_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span> <span class="p">)</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_test_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span> <span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14281,7 +14281,7 @@ the main idea is the  architecture is an art, and to set  the hyper parametes us
         <span class="k">if</span> <span class="n">valid_loss</span> <span class="o">&lt;=</span> <span class="n">valid_loss_min</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation loss decreased (</span><span class="si">{:.6f}</span><span class="s1"> --&gt; </span><span class="si">{:.6f}</span><span class="s1">).  Saving model ...&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">valid_loss_min</span><span class="p">,</span><span class="n">valid_loss</span><span class="p">))</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;model_scratch.pt&#39;</span><span class="p">)</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">save_path</span><span class="p">)</span>
             <span class="n">valid_loss_min</span> <span class="o">=</span> <span class="n">valid_loss</span>
     
     <span class="c1"># return trained model</span>
@@ -14446,7 +14446,7 @@ Test Accuracy: 11% (97/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -14465,18 +14465,18 @@ Test Accuracy: 11% (97/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## TODO: Specify data loaders</span>
 
-<span class="n">transformT</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
+<span class="n">transform_train</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">RandomHorizontalFlip</span><span class="p">(),</span> <span class="c1"># randomly flip and rotate</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">RandomRotation</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">))])</span>
 
-<span class="n">transformV</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
                                 <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">))])</span>
 
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">20</span>
@@ -14488,9 +14488,9 @@ Test Accuracy: 11% (97/836)
 <span class="n">dog_test_files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;test/&#39;</span><span class="p">)</span>
 
 
-<span class="n">train_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_train_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transformT</span> <span class="p">)</span>
-<span class="n">valid_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_valid_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transformV</span> <span class="p">)</span>
-<span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_test_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transformV</span> <span class="p">)</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_train_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transform_train</span> <span class="p">)</span>
+<span class="n">valid_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_valid_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span> <span class="p">)</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">ImageFolder</span><span class="p">(</span> <span class="n">dog_test_files</span> <span class="p">,</span> <span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span> <span class="p">)</span>
 
 
 <span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span><span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14515,7 +14515,7 @@ Test Accuracy: 11% (97/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="k">as</span> <span class="nn">models</span>
@@ -14749,75 +14749,6 @@ Test Accuracy: 11% (97/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">n_epochs</span><span class="p">,</span> <span class="n">loaders</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">use_cuda</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;returns trained model&quot;&quot;&quot;</span>
-    <span class="c1"># initialize tracker for minimum validation loss</span>
-    <span class="n">valid_loss_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">Inf</span> 
-    
-    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_epochs</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="c1"># initialize variables to monitor training and validation loss</span>
-        <span class="n">train_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-        <span class="n">valid_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-        
-        <span class="c1">###################</span>
-        <span class="c1"># train the model #</span>
-        <span class="c1">###################</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">loaders</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]):</span>
-            <span class="c1"># move to GPU</span>
-            <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-                <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cuda</span><span class="p">(),</span> <span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-            <span class="c1">## find the loss and update the model parameters accordingly</span>
-            <span class="c1">## record the average training loss, using something like</span>
-            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-            <span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_loss</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">batch_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">train_loss</span><span class="p">))</span>
-            
-        <span class="c1">######################    </span>
-        <span class="c1"># validate the model #</span>
-        <span class="c1">######################</span>
-        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">loaders</span><span class="p">[</span><span class="s1">&#39;valid&#39;</span><span class="p">]):</span>
-            <span class="c1"># move to GPU</span>
-            <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-                <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cuda</span><span class="p">(),</span> <span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-            <span class="c1">## update the average validation loss</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-            <span class="n">valid_loss</span> <span class="o">=</span> <span class="n">valid_loss</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">batch_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">valid_loss</span><span class="p">))</span>
-
-            
-        <span class="c1"># print training/validation statistics </span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Epoch: </span><span class="si">{}</span><span class="s1"> </span><span class="se">\t</span><span class="s1">Training Loss: </span><span class="si">{:.6f}</span><span class="s1"> </span><span class="se">\t</span><span class="s1">Validation Loss: </span><span class="si">{:.6f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">epoch</span><span class="p">,</span> 
-            <span class="n">train_loss</span><span class="p">,</span>
-            <span class="n">valid_loss</span>
-            <span class="p">))</span>
-        
-        <span class="c1">## TODO: save the model if validation loss has decreased</span>
-        <span class="k">if</span> <span class="n">valid_loss</span> <span class="o">&lt;=</span> <span class="n">valid_loss_min</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation loss decreased (</span><span class="si">{:.6f}</span><span class="s1"> --&gt; </span><span class="si">{:.6f}</span><span class="s1">).  Saving model ...&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">valid_loss_min</span><span class="p">,</span><span class="n">valid_loss</span><span class="p">))</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">&#39;model_transfer.pt&#39;</span><span class="p">)</span> <span class="c1">#  or save_path instead</span>
-            <span class="n">valid_loss_min</span> <span class="o">=</span> <span class="n">valid_loss</span>
-    
-    <span class="c1"># return trained model</span>
-    <span class="k">return</span> <span class="n">model</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -14858,7 +14789,7 @@ Epoch: 5 	Training Loss: 0.487963 	Validation Loss: 0.828042
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load the model that got the best validation accuracy (uncomment the line below)</span>
@@ -14875,7 +14806,7 @@ Epoch: 5 	Training Loss: 0.487963 	Validation Loss: 0.828042
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -14942,7 +14873,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: Write a function that takes a path to an image as input</span>
@@ -14954,7 +14885,7 @@ Test Accuracy: 79% (668/836)
 <span class="k">def</span> <span class="nf">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
     
     <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">transformV</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">model_transfer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -14972,27 +14903,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">predict_breed_transfer2</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
-    
-    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">transformV</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">model_transfer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">output</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">class_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -15008,7 +14919,7 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[86]:</div>
+    <div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -15025,7 +14936,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predict_breed_transfer</span><span class="p">(</span><span class="s1">&#39;dogImages</span><span class="se">\\</span><span class="s1">test</span><span class="se">\\</span><span class="s1">001.Affenpinscher</span><span class="se">\\</span><span class="s1">Affenpinscher_00003.jpg&#39;</span><span class="p">)</span>
@@ -15041,7 +14952,7 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[87]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -15109,19 +15020,19 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_app</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
-    <span class="c1">## handle cases for a human face, dog, and neither</span>
-    <span class="n">human</span> <span class="o">=</span> <span class="n">face_detector</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
-    <span class="n">breed</span> <span class="o">=</span> <span class="n">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">human</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; human is detected&#39;</span><span class="p">}</span>
-    <span class="k">elif</span> <span class="n">breed</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; breed is detected with type </span><span class="si">{}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">breed</span><span class="p">)}</span>
+    
+    <span class="k">if</span> <span class="n">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; breed is detected with type </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">))}</span>
+    
+    <span class="k">elif</span> <span class="n">face_detector</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; human is detected &#39;</span><span class="p">}</span>
+    
     <span class="k">else</span><span class="p">:</span>
-        <span class="p">{</span><span class="s1">&#39; Nothing is detected&#39;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; Nothing is detected&#39;</span><span class="p">}</span>
 </pre></div>
 
     </div>
@@ -15131,7 +15042,28 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_app</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">face_detector</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; human is detected and seems like </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">))}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; breed is detected with type </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predict_breed_transfer</span><span class="p">(</span><span class="n">img_path</span><span class="p">))}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39; Nothing is detected&#39;</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">face_detector</span><span class="p">(</span><span class="n">human_files</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
@@ -15147,7 +15079,7 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[111]:</div>
+    <div class="prompt output_prompt">Out[82]:</div>
 
 
 
@@ -15164,7 +15096,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">face_detector</span><span class="p">(</span><span class="n">human_files</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
@@ -15180,7 +15112,7 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[112]:</div>
+    <div class="prompt output_prompt">Out[83]:</div>
 
 
 
@@ -15197,7 +15129,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_app</span><span class="p">(</span><span class="s1">&#39;dogImages</span><span class="se">\\</span><span class="s1">test</span><span class="se">\\</span><span class="s1">001.Affenpinscher</span><span class="se">\\</span><span class="s1">Affenpinscher_00003.jpg&#39;</span><span class="p">)</span>
@@ -15213,13 +15145,13 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[106]:</div>
+    <div class="prompt output_prompt">Out[84]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39; breed is detected with type Affenpinscher &#39;}</pre>
+<pre>{&#39; breed is detected with type Affenpinscher&#39;}</pre>
 </div>
 
 </div>
@@ -15230,7 +15162,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_app</span><span class="p">(</span><span class="n">human_files</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
@@ -15246,13 +15178,13 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[113]:</div>
+    <div class="prompt output_prompt">Out[85]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39; breed is detected with type Pharaoh hound &#39;}</pre>
+<pre>{&#39; breed is detected with type German shorthaired pointer&#39;}</pre>
 </div>
 
 </div>
@@ -15263,7 +15195,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_app</span><span class="p">(</span><span class="n">human_files</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
@@ -15279,13 +15211,13 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[114]:</div>
+    <div class="prompt output_prompt">Out[86]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39; human is detected&#39;}</pre>
+<pre>{&#39; human is detected and seems like Dachshund&#39;}</pre>
 </div>
 
 </div>
@@ -15319,7 +15251,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## TODO: Execute your algorithm from Step 6 on</span>
@@ -15346,12 +15278,12 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; human is detected&#39;}
-{&#39; human is detected&#39;}
-{&#39; breed is detected with type Pharaoh hound &#39;}
-{&#39; breed is detected with type Affenpinscher &#39;}
-{&#39; breed is detected with type Affenpinscher &#39;}
-{&#39; breed is detected with type Affenpinscher &#39;}
+<pre>{&#39; human is detected and seems like English setter&#39;}
+{&#39; human is detected and seems like Dachshund&#39;}
+{&#39; breed is detected with type German shorthaired pointer&#39;}
+{&#39; breed is detected with type Affenpinscher&#39;}
+{&#39; breed is detected with type Affenpinscher&#39;}
+{&#39; breed is detected with type Affenpinscher&#39;}
 </pre>
 </div>
 </div>
@@ -15362,7 +15294,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[188]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">osama</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;osama/*&quot;</span><span class="p">)</span>
@@ -15379,7 +15311,7 @@ Test Accuracy: 79% (668/836)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[188]:</div>
+    <div class="prompt output_prompt">Out[99]:</div>
 
 
 
@@ -15401,7 +15333,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[171]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -15414,7 +15346,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[172]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">final_pred</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
@@ -15429,7 +15361,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[169]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_pred</span><span class="p">(</span><span class="s1">&#39;osama</span><span class="se">\\</span><span class="s1">output_image.jpg&#39;</span><span class="p">)</span>
@@ -15449,7 +15381,7 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; human is detected&#39;}
+<pre>{&#39; human is detected and seems like Irish water spaniel&#39;}
 </pre>
 </div>
 </div>
@@ -15475,7 +15407,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[175]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_pred</span><span class="p">(</span><span class="s1">&#39;osama</span><span class="se">\\</span><span class="s1">20180522_013433.jpg&#39;</span><span class="p">)</span>
@@ -15495,7 +15427,7 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; human is detected&#39;}
+<pre>{&#39; human is detected and seems like Xoloitzcuintli&#39;}
 </pre>
 </div>
 </div>
@@ -15521,7 +15453,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_pred</span><span class="p">(</span><span class="s1">&#39;osama</span><span class="se">\\</span><span class="s1">Curly-coated_retriever_03896.jpg&#39;</span><span class="p">)</span>
@@ -15541,7 +15473,7 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; breed is detected with type Curly-coated retriever &#39;}
+<pre>{&#39; breed is detected with type Curly-coated retriever&#39;}
 </pre>
 </div>
 </div>
@@ -15567,7 +15499,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[185]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_pred</span><span class="p">(</span><span class="s1">&#39;osama</span><span class="se">\\</span><span class="s1">Labrador_retriever_06449.jpg&#39;</span><span class="p">)</span>
@@ -15587,7 +15519,7 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; breed is detected with type Labrador retriever &#39;}
+<pre>{&#39; breed is detected with type Labrador retriever&#39;}
 </pre>
 </div>
 </div>
@@ -15613,7 +15545,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[187]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_pred</span><span class="p">(</span><span class="s1">&#39;osama</span><span class="se">\\</span><span class="s1">Brittany_02625.jpg&#39;</span><span class="p">)</span>
@@ -15633,7 +15565,7 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; breed is detected with type Brittany &#39;}
+<pre>{&#39; breed is detected with type Brittany&#39;}
 </pre>
 </div>
 </div>
@@ -15659,7 +15591,7 @@ Test Accuracy: 79% (668/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[189]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_pred</span><span class="p">(</span><span class="s1">&#39;osama</span><span class="se">\\</span><span class="s1">Labrador_retriever_06457.jpg&#39;</span><span class="p">)</span>
@@ -15679,7 +15611,7 @@ Test Accuracy: 79% (668/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39; breed is detected with type Labrador retriever &#39;}
+<pre>{&#39; breed is detected with type Labrador retriever&#39;}
 </pre>
 </div>
 </div>
@@ -15699,6 +15631,19 @@ Test Accuracy: 79% (668/836)
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
